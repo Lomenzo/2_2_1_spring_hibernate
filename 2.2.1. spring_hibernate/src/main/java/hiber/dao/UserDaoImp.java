@@ -33,28 +33,5 @@ public class UserDaoImp implements UserDao {
       // моя идея упорно отказывалась работать с экранированием \' и \" поэтому взял char UTF-8 для кавычки
       TypedQuery<User> query = sessionFactory.getCurrentSession().createQuery(hqlT);
       return query.getSingleResult();
-      //List<User> idList = query.getResultList();
-      //idList.forEach(System.out::println);
-      //return (User) queryCarID;
-      //System.out.println(user);
-      //return sessionFactory.getCurrentSession().get(User.class, (long)22);
-      //return sessionFactory.getCurrentSession().createQuery("FROM cars c WHERE c.model = VAZ");
-
-
-      //return sessionFactory.getCurrentSession().get(User.class, (long)22);
-
-      /*String hql = "FROM cars c WHERE c.model = VAZ";
-      Query query = session.createQuery(hql);
-      List results = query.list();
-
-      String hql = "SELECT E.firstName FROM Employee E";
-      Query query = session.createQuery(hql);*/
-
-      //return sessionFactory.getCurrentSession().load(User.class, car.getModel());
-
-      //методы .get и .load ищут по (класс + ключ-Id)
-      //не удалось заставить их искать по (класс + другое поле)
-      //нужно найти способ искать по полям (не только ключу)
-
    }
 }

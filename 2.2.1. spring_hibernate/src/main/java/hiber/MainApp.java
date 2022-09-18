@@ -16,12 +16,12 @@ public class MainApp {
 
       UserService userService = context.getBean(UserService.class);
 
-      //4. Создайте несколько пользователей с машинами, добавьте их в базу данных, вытащите обратно.
+//Задание из задачи:        4. Создайте несколько пользователей с машинами, добавьте их в базу данных, вытащите обратно.
       User user1 = new User("Vasiliy", "Petrovich", "user1@mail.ru");
       User user2 = new User("Пахан", "Местный", "user2@mail.ru");
       User user3 = new User("Иван", "Мажоров", "user3@mail.ru");
       User user4 = new User("Санёк", "Настолбович", "user4@mail.ru");
-
+      //присваиваем машины этим пользователям
       user1.setCar(new Car("VAZ", 2106));
       user2.setCar(new Car("Mersedes", 600));
       user3.setCar(new Car("Ferrari", 50));
@@ -42,7 +42,7 @@ public class MainApp {
          System.out.println();
       }
 
-      //5. В сервис добавьте метод, который с помощью hql-запроса будет доставать юзера, владеющего машиной по ее модели и серии
+//Задание из задачи:        5. В сервис добавьте метод, который с помощью hql-запроса будет доставать юзера, владеющего машиной по ее модели и серии
       User userTest = userService.getUserByCar(new Car("ToyotaMark", 2));
       //тестовый вывод в консоль этого юзера по модели-серии машины
       System.out.println("Владелец автомобиля:");

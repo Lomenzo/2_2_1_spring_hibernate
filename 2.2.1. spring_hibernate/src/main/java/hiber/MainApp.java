@@ -16,15 +16,8 @@ public class MainApp {
 
       UserService userService = context.getBean(UserService.class);
 
-      User userTest = userService.getUserByCar(new Car("Ferrari", 50));
-
-      System.out.println("Id = "+userTest.getId());
-      System.out.println("First Name = "+userTest.getFirstName());
-      System.out.println("Last Name = "+userTest.getLastName());
-      System.out.println("Email = "+userTest.getEmail());
-      System.out.println("Car = "+userTest.getCar());
-
-     /* User user1 = new User("Vasiliy", "Petrovich", "user1@mail.ru");
+      //4. Создайте несколько пользователей с машинами, добавьте их в базу данных, вытащите обратно.
+      User user1 = new User("Vasiliy", "Petrovich", "user1@mail.ru");
       User user2 = new User("Пахан", "Местный", "user2@mail.ru");
       User user3 = new User("Иван", "Мажоров", "user3@mail.ru");
       User user4 = new User("Санёк", "Настолбович", "user4@mail.ru");
@@ -47,7 +40,17 @@ public class MainApp {
          System.out.println("Email = "+user.getEmail());
          System.out.println("Car = "+user.getCar());
          System.out.println();
-      }*/
+      }
+
+      //5. В сервис добавьте метод, который с помощью hql-запроса будет доставать юзера, владеющего машиной по ее модели и серии
+      User userTest = userService.getUserByCar(new Car("ToyotaMark", 2));
+      //тестовый вывод в консоль этого юзера по модели-серии машины
+      System.out.println("Владелец автомобиля:");
+      System.out.println("Id = "+userTest.getId());
+      System.out.println("First Name = "+userTest.getFirstName());
+      System.out.println("Last Name = "+userTest.getLastName());
+      System.out.println("Email = "+userTest.getEmail());
+      System.out.println("Car = "+userTest.getCar());
 
       context.close();
    }

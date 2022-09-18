@@ -7,7 +7,6 @@ public class Car {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    @Column(name = "user_id")
     private Long id;
 
     @Column
@@ -17,7 +16,6 @@ public class Car {
     private int series;
 
     @OneToOne(mappedBy = "car")
-//    @JoinColumn(name = "user_id")
     private User user;
 
     public Long getId() {
